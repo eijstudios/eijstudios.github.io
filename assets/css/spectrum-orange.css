@@ -2843,9 +2843,9 @@ p.demo-text {
 /*--------------------------------------------------------------
 # Menu Section
 --------------------------------------------------------------*/
-.menu .tab-content .menu-item {
+/*.menu .tab-content .menu-item {
     text-align-last: center;
-}
+}*/
 .price {
     font-size: 24px;
     font-weight: 700;
@@ -2856,7 +2856,7 @@ p.demo-text {
 	
 }
 .nav-img{
-	height: auto; 
+height: auto; 
 max-width: 150px;
     
 }
