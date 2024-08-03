@@ -2323,17 +2323,17 @@ fieldset[disabled] .btn-danger.active {
   -moz-transition: all 0.3s ease-in-out;
   -o-transitino: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  height: 50px;
-  width: 50px;
+  /*height: 50px;
+  width: 50px;*/
   border-radius: 100%;
-  font-size: 20px;
+  font-size: 50px; /*20px*/
   line-height: 37px;
 }
 .btn-facebook:hover,
 .btn-facebook:focus {
   outline: none;
-  color: #f4f5f7;
-  background-color: #3b5998;
+  color: #3b5998; /*#f4f5f7;
+  background-color: #3b5998;*/
 }
 .btn-flickr {
   -webkit-transition: all 0.3s ease-in-out;
@@ -2425,17 +2425,17 @@ fieldset[disabled] .btn-danger.active {
   -moz-transition: all 0.3s ease-in-out;
   -o-transitino: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  height: 50px;
-  width: 50px;
+  /*height: 50px;
+  width: 50px;*/
   border-radius: 100%;
-  font-size: 20px;
+  font-size: 50px; /*20px*/
   line-height: 37px;
 }
 .btn-instagram:hover,
 .btn-instagram:focus {
   outline: none;
-  color: #f4f5f7;
-  background-color: #3f729b;
+  color: #3f729b;/*#f4f5f7;
+  background-color: #3f729b;*/
 }
 .btn-linkedin {
   -webkit-transition: all 0.3s ease-in-out;
