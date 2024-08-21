@@ -24,3 +24,6 @@ for (var i = 0; i < anchors.length; i++) {
     // Do not prevent default action, allowing the link to be opened in a new tab
   });
 }
+
+//Get current year
+document.getElementById("year").innerHTML = new Date().getFullYear();
