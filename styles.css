@@ -1,0 +1,58 @@
+            /* Estilos básicos */
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        background-color: #87CEEB; /* Fondo azul simulando el cielo */
+                        font-family: Arial, sans-serif;
+                    }
+            
+                    #game-container {
+                        position: relative;
+                        width: 100%;
+                        max-width: 600px;
+                        height: 100%;
+                        overflow: hidden;
+                        border: 2px solid #000;
+                    }
+            
+                    #backgroundCanvas, #gameCanvas {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+            
+                    #backgroundCanvas {
+                        z-index: 1; /* Fondo detrás */
+                    }
+            
+                    #gameCanvas {
+                        z-index: 2; /* Elementos del juego encima */
+                    }
+            
+                    #scoreboard {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        color: white;
+                        padding: 5px 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 14px;
+                        z-index: 1000;
+                        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+                    }
+            
+                    #scoreboard span {
+                        margin: 0 10px;
+                    }
+            
