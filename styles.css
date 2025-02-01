@@ -57,8 +57,8 @@ body {
     margin: 0 10px;
 }
 
-/* Forzar orientación vertical */
-@media (orientation: landscape) {
+/* Forzar orientación vertical en dispositivos pequeños */
+@media (max-width: 768px) and (orientation: landscape) {
     body::before {
         content: "Por favor, gira tu dispositivo para jugar en modo vertical.";
         position: absolute;
@@ -75,6 +75,17 @@ body {
     }
 
     #game-container {
-        display: none; /* Ocultar el juego en modo horizontal */
+        display: none; /* Ocultar el juego en modo horizontal en dispositivos pequeños */
+    }
+}
+
+/* Permitir orientación horizontal en dispositivos grandes */
+@media (min-width: 769px) {
+    body::before {
+        display: none; /* No mostrar el mensaje de orientación */
+    }
+
+    #game-container {
+        display: block; /* Mostrar el juego en cualquier orientación */
     }
 }
