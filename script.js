@@ -4,6 +4,21 @@
                     const ctxBackground = backgroundCanvas.getContext("2d");
                     const ctx = gameCanvas.getContext("2d");
             
+                    // Función para ajustar el tamaño de los canvas al tamaño de la ventana
+                    function resizeCanvas() {
+                       const width = window.innerWidth;
+                       const height = window.innerHeight;
+
+                       backgroundCanvas.width = gameCanvas.width = width;
+                       backgroundCanvas.height = gameCanvas.height = height;
+                    }
+                    
+                    // Llamar a la función al cargar la página
+                    resizeCanvas();
+
+                    // Ajustar el tamaño de los canvas si la ventana cambia de tamaño
+                    window.addEventListener("resize", resizeCanvas);
+                    
                     backgroundCanvas.width = gameCanvas.width = 400;
                     backgroundCanvas.height = gameCanvas.height = 600;
                     let isExploding = false; // Indica si el personaje está en estado de explosión
