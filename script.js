@@ -70,8 +70,8 @@
                         enemies.push({
                             x: gameCanvas.width,
                             y: enemyY,
-                            width: 50,
-                            height: 50
+                            width: 60,
+                            height: 60
                         });
                     }
             
@@ -118,8 +118,8 @@
                 coins.push({
                     x: gameCanvas.width,
                     y: Math.random() * (gameCanvas.height - 50),
-                    width: 20,
-                    height: 20
+                    width: 25,
+                    height: 25
                 });
             }
             
@@ -161,11 +161,11 @@
                 }
             }
             
-                    const dogRocket = {
+            const dogRocket = {
                 x: 50,
                 y: gameCanvas.height / 2,
-                width: 40,
-                height: 40,
+                width: 50,
+                height: 50,
                 dy: 0,
                 jump: -7,
                 gravity: 0.5,

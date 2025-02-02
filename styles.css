@@ -60,7 +60,7 @@ body {
 /* Forzar orientación vertical */
 @media (orientation: landscape) {
     body::before {
-        content: "Por favor, gira tu dispositivo para jugar en modo vertical.";
+        content: "Vertical Mode Only.";
         position: absolute;
         top: 50%;
         left: 50%;
