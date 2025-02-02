@@ -4,8 +4,8 @@
                     const ctxBackground = backgroundCanvas.getContext("2d");
                     const ctx = gameCanvas.getContext("2d");
             
-                    backgroundCanvas.width = gameCanvas.width = 400;
-                    backgroundCanvas.height = gameCanvas.height = 600;
+                    backgroundCanvas.width = gameCanvas.width = window.innerWidth;
+                    backgroundCanvas.height = gameCanvas.height = window.innerHeight;
                     let isExploding = false; // Indica si el personaje está en estado de explosión
                     
                     // Variables del juego
