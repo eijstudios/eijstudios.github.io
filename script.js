@@ -4,6 +4,13 @@
                     const ctxBackground = backgroundCanvas.getContext("2d");
                     const ctx = gameCanvas.getContext("2d");
             
+                    // Lista de imágenes para los enemigos
+                    const enemyImages = [
+                        "enemigo1.png", // Ruta de la imagen 1
+                        "enemigo2.png", // Ruta de la imagen 2
+                        "enemigo3.png", // Ruta de la imagen 3
+                        "enemigo4.png"  // Ruta de la imagen 4
+];
                     backgroundCanvas.width = gameCanvas.width = window.innerWidth;
                     backgroundCanvas.height = gameCanvas.height = window.innerHeight;
                     let isExploding = false; // Indica si el personaje está en estado de explosión
@@ -37,7 +44,7 @@
                     dogImage.src = "DogizenRocket.png";
             
                     const enemyImage = new Image();
-                    enemyImage.src = "enemigo1.png";
+                    enemyImage.src = "enemigo2.png";
             
                     const coinImage = new Image();
                     coinImage.src = "DogizenCoin.png";
@@ -66,7 +73,7 @@
             
                     const enemies = [];
                     function createEnemy() {
-                        const enemyY = Math.random() * (gameCanvas.height - 50); // Posición aleatoria
+                        const enemyY = (Math.random() * (gameCanvas.height - 150)) + 50; // Posición aleatoria
                         enemies.push({
                             x: gameCanvas.width,
                             y: enemyY,
@@ -117,7 +124,7 @@
             function createCoin() {
                 coins.push({
                     x: gameCanvas.width,
-                    y: Math.random() * (gameCanvas.height - 50),
+                    y: (Math.random() * (gameCanvas.height - 150)) + 50,
                     width: 25,
                     height: 25
                 });
@@ -291,19 +298,6 @@
                         document.location.reload(); // Recargar la página para reiniciar el juego
                     }
                     
-                    // Generar enemigos y monedas periódicamente
-                    /*setInterval(() => {
-                        if (!isGameOver && !isCountdownActive) {
-                            createEnemy(); // Crear un nuevo enemigo
-                        }
-                    }, 2000); // Cada 2 segundos
-            
-                    setInterval(() => {
-                        if (!isGameOver && !isCountdownActive) {
-                            createCoin(); // Crear una nueva moneda
-                        }
-                    }, 3000); // Cada 3 segundos
-                    */
                     const particles = [];
                     function createParticles(x, y) {
                         for (let i = 0; i < 10; i++) {
@@ -368,7 +362,9 @@
             
                         // Mantener la velocidad rápida por 2 segundos
                         setTimeout(() => {
-                            // Restablecer la velocidad normal del fondo
+                            // Aumentamos la velocidad del juego
+                            backgroundSpeedNormal>=5? 5 : backgroundSpeedNormal += 1;
+                        // Restablecer la velocidad normal del fondo
                             backgroundSpeed = backgroundSpeedNormal;
             
                             // Reanudar la generación de monedas y enemigos
