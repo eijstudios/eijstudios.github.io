@@ -10,7 +10,36 @@
                         "enemigo2.png", // Ruta de la imagen 2
                         "enemigo3.png", // Ruta de la imagen 3
                         "enemigo4.png"  // Ruta de la imagen 4
-];
+                    ];
+					
+					// Estructura para almacenar los retos diarios
+					const dailyChallenges = [
+						{
+							id: 1,
+							description: "Recolecta 20 monedas",
+							type: "collect_coins",
+							target: 20,
+							progress: 0,
+							completed: false
+						},
+						{
+							id: 2,
+							description: "Recorre una distancia de 5000 o más",
+							type: "distance",
+							target: 5000,
+							progress: 0,
+							completed: false
+						},
+						{
+							id: 3,
+							description: "Juega durante 2 minutos seguidos",
+							type: "play_time",
+							target: 120, // En segundos
+							progress: 0,
+							completed: false
+						}
+					];
+					
                     backgroundCanvas.width = gameCanvas.width = window.innerWidth;
                     backgroundCanvas.height = gameCanvas.height = window.innerHeight;
                     let isExploding = false; // Indica si el personaje está en estado de explosión
@@ -152,7 +181,18 @@
                         if (coinScore % 10 === 0 && coinScore > 0) {
                             startTransition();
                         }
-                    }
+						
+						// Cuando el jugador recoja una moneda, incrementa el progreso del reto correspondiente
+						dailyChallenges.forEach(challenge => {
+							if (challenge.type === "collect_coins" && !challenge.completed) {
+								challenge.progress++;
+								if (challenge.progress >= challenge.target) {
+									challenge.completed = true;
+									alert(`¡Reto completado! ${challenge.description}`);
+								}
+							}
+						});
+					}
             
                     // Eliminar monedas fuera del canvas
                     if (coin.x + coin.width < 0) {
@@ -288,9 +328,36 @@
                         if (!isGameOver && !isCountdownActive) {
                             distanceScore++; // Incrementar la distancia recorrida
                             updateScoreboard(); // Actualizar el marcador
+							
+							// Incrementa el progreso del reto de distancia en cada iteración del bucle principal
+							dailyChallenges.forEach(challenge => {
+								if (challenge.type === "distance" && !challenge.completed) {
+									challenge.progress++;
+									if (challenge.progress >= challenge.target) {
+										challenge.completed = true;
+										alert(`¡Reto completado! ${challenge.description}`);
+									}
+								}
+							});
                         }
                     }
                     
+					let playTime = 0;
+
+					// Usa un temporizador para contar el tiempo que el jugador ha estado jugando y actualiza el progreso del reto de tiempo
+					function updatePlayTime() {
+						playTime++;
+						dailyChallenges.forEach(challenge => {
+							if (challenge.type === "play_time" && !challenge.completed) {
+								challenge.progress = playTime;
+								if (challenge.progress >= challenge.target) {
+									challenge.completed = true;
+									alert(`¡Reto completado! ${challenge.description}`);
+								}
+							}
+						});
+					}
+					
                     // Fin del juego
                     function gameOver() {
                         isGameOver = true; // Cambiar el estado del juego a "terminado"
@@ -392,4 +459,7 @@
                         createEnemy();
                     }
                 }, 2000); // Cada 2 segundos
+				
+				// Llama a updatePlayTime cada segundo
+				setInterval(updatePlayTime, 1000);
             }
