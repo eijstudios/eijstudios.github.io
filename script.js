@@ -363,7 +363,7 @@
                         // Mantener la velocidad rápida por 2 segundos
                         setTimeout(() => {
                             // Aumentamos la velocidad del juego
-                            backgroundSpeedNormal>=5? 5 : backgroundSpeedNormal += 1;
+                            backgroundSpeedNormal>=5? 5 : backgroundSpeedNormal ++;
                         // Restablecer la velocidad normal del fondo
                             backgroundSpeed = backgroundSpeedNormal;
             
