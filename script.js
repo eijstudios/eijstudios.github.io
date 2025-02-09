@@ -63,6 +63,14 @@
         target: 120, // Objetivo del reto en segundos
         progress: 0, // Progreso actual
         completed: false // Si el reto está completado
+    },
+    {
+        id: 4,
+        description: "Esquiva 100 enemigos",
+        type: "enemies_defeated", // Tipo de reto
+        target: 100, // Objetivo del reto en segundos
+        progress: 0, // Progreso actual
+        completed: false // Si el reto está completado
     }
 ];
 
@@ -102,11 +110,15 @@
 
             function createEnemy() {
             	const enemyY = (Math.random() * (gameCanvas.height - 150)) + 50; // Posición aleatoria
+            	// Seleccionar un gráfico aleatorio para el enemigo
+                const randomGraphic = enemyImages[Math.floor(Math.random() * enemyImages.length)];
+
             	enemies.push({
             		x: gameCanvas.width,
             		y: enemyY,
             		width: 60,
-            		height: 60
+            		height: 60,
+            		image: randomGraphic // Gráfico asignado al enemigo
             	});
             }
 
@@ -138,13 +150,17 @@
             		if (enemy.x + enemy.width < 0) {
             			enemies.splice(i, 1);
             			i--;
+            			// Actualizamos el reto
+            			updateChallenges("enemies_defeated");
             		}
             	}
             }
 
             function drawEnemies() {
             	for (const enemy of enemies) {
-            		ctx.drawImage(enemyImage, enemy.x, enemy.y, enemy.width, enemy.height);
+            	    const img = new Image();
+        img.src = enemy.image; // Cargar el gráfico del enemigo
+            		ctx.drawImage(img, enemy.x, enemy.y, enemy.width, enemy.height);
             	}
             }
 
