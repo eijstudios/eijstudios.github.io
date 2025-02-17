@@ -66,9 +66,9 @@
     },
     {
         id: 4,
-        description: "Esquiva 100 enemigos",
+        description: "Esquiva 50 enemigos",
         type: "enemies_defeated", // Tipo de reto
-        target: 100, // Objetivo del reto en segundos
+        target: 50, // Objetivo del reto en segundos
         progress: 0, // Progreso actual
         completed: false // Si el reto está completado
     }
@@ -464,7 +464,12 @@ setInterval(() => {
             }
 
             function resetDailyChallenges() {
-            	const today = new Date().toDateString();
+                    // Reiniciar el progreso de los retos
+            		dailyChallenges.forEach(challenge => {
+            			challenge.progress = 0;
+            			challenge.completed = false;
+                	});
+            	/*const today = new Date().toDateString();
             	const lastReset = localStorage.getItem("lastReset");
 
             	if (lastReset != today) {
@@ -486,7 +491,7 @@ setInterval(() => {
             				dailyChallenges[index] = savedChallenges[index];
             			});
             		}
-            	}
+            	}*/
             }
 
             // Funcion para actualizar el Progreso de los Retos
