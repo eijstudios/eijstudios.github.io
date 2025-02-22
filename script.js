@@ -19,6 +19,7 @@
             let tapScore = 0;
             let coinScore = 0;
             let distanceScore = 0;
+            let challengeScore = 0;
             let totalScore = 0;
             let isGameOver = false;
 
@@ -39,12 +40,12 @@
             let backgroundSpeedNormal = 1; // Velocidad normal del fondo
             let backgroundSpeedFast = 25; // Velocidad rápida del fondo durante la transición
             
-            const dailyChallenges = [
+            const gameChallenges = [
     {
         id: 1,
-        description: "Recolecta 20 monedas",
+        description: "Recolecta 25 monedas o más",
         type: "collect_coins", // Tipo de reto
-        target: 20, // Objetivo del reto
+        target: 25, // Objetivo del reto
         progress: 0, // Progreso actual
         completed: false // Si el reto está completado
     },
@@ -192,13 +193,12 @@
             			coins.splice(i, 1);
             			i--;
             			updateScoreboard();
-
+                        updateChallenges("collect_coins");
+                        
             			// Iniciar transición al recoger 10 monedas
-            			if (coinScore % 10 === 0 && coinScore > 0) {
+            			if (coinScore % 10 == 0 && coinScore > 0) {
             				startTransition();
             			}
-
-            			updateChallenges("collect_coins");
             		}
 
             		// Eliminar monedas fuera del canvas
@@ -216,7 +216,7 @@
             }
 
             const dogRocket = {
-            	x: 50,
+            	x: gameCanvas.width / 6,
             	y: gameCanvas.height / 2,
             	width: 50,
             	height: 50,
@@ -326,7 +326,7 @@
             	document.getElementById("tapScore").textContent = tapScore; // Actualizar los toques
             	document.getElementById("coinScore").textContent = coinScore; // Actualizar las monedas
             	document.getElementById("distanceScore").textContent = distanceScore; // Actualizar la distancia
-            	totalScore = tapScore + coinScore * 10 + distanceScore; // Calcular la puntuación total
+            	totalScore = tapScore + coinScore * 10 + distanceScore + challengeScore; // Calcular la puntuación total
             	document.getElementById("totalScore").textContent = totalScore; // Actualizar la puntuación total
             }
 
@@ -441,7 +441,7 @@
             		}
             	}, 2000); // Cada 2 segundos
             	
-            	resetDailyChallenges();
+            	resetgameChallenges();
             	
 setInterval(() => {
     playTime++;
@@ -463,12 +463,13 @@ setInterval(() => {
             	}, 3000); // 3 segundos (duración de la animación)
             }
 
-            function resetDailyChallenges() {
-                    // Reiniciar el progreso de los retos
-            		dailyChallenges.forEach(challenge => {
+            function resetgameChallenges() {
+                // Reiniciar el progreso de los retos
+            	gameChallenges.forEach(challenge => {
             			challenge.progress = 0;
             			challenge.completed = false;
                 	});
+
             	/*const today = new Date().toDateString();
             	const lastReset = localStorage.getItem("lastReset");
 
@@ -476,19 +477,19 @@ setInterval(() => {
             		localStorage.setItem("lastReset", today);
 
             		// Reiniciar el progreso de los retos
-            		dailyChallenges.forEach(challenge => {
+            		gameChallenges.forEach(challenge => {
             			challenge.progress = 0;
             			challenge.completed = false;
                 	});
 
             		// Guardar los retos en localStorage
-            		localStorage.setItem("dailyChallenges", JSON.stringify(dailyChallenges));
+            		localStorage.setItem("gameChallenges", JSON.stringify(gameChallenges));
             	} else {
             		// Cargar el progreso de los retos desde localStorage
-            		const savedChallenges = JSON.parse(localStorage.getItem("dailyChallenges"));
+            		const savedChallenges = JSON.parse(localStorage.getItem("gameChallenges"));
             		if (savedChallenges) {
-            			dailyChallenges.forEach((challenge, index) => {
-            				dailyChallenges[index] = savedChallenges[index];
+            			gameChallenges.forEach((challenge, index) => {
+            				gameChallenges[index] = savedChallenges[index];
             			});
             		}
             	}*/
@@ -496,7 +497,7 @@ setInterval(() => {
 
             // Funcion para actualizar el Progreso de los Retos
             function updateChallenges(type, amount = 1) {
-            	dailyChallenges.forEach(challenge => {
+            	gameChallenges.forEach(challenge => {
             		if (challenge.type === type && !challenge.completed) {
             			challenge.progress += amount;
 
@@ -505,7 +506,8 @@ setInterval(() => {
             				showMessage(`¡Reto completado! ${challenge.description}`);
 
             				// Guardar el estado actualizado en localStorage
-            				localStorage.setItem("dailyChallenges", JSON.stringify(dailyChallenges));
+            				/*localStorage.setItem("gameChallenges", JSON.stringify(gameChallenges));*/
+            			challengeScore += 500;
             			}
             		}
             	});
