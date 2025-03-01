@@ -43,9 +43,9 @@
             const gameChallenges = [
     {
         id: 1,
-        description: "Recolecta 10 monedas o más",
+        description: "Recolecta 25 monedas o más",
         type: "collect_coins", // Tipo de reto
-        target: 10, // Objetivo del reto
+        target: 25, // Objetivo del reto
         progress: 0, // Progreso actual
         completed: false // Si el reto está completado
     },
@@ -284,6 +284,7 @@
             			if (countdown < 0) {
             				clearInterval(animationInterval); // Detener la animación
             				isCountdownActive = false; // Desactivar la cuenta atrás
+                         resetgameChallenges(); //Reiniciamos los retos
             				// Iniciar la generación de monedas y enemigos
             				resumeGame();
             				gameLoop(); // Iniciar el juego
@@ -440,8 +441,6 @@
             			createEnemy();
             		}
             	}, 2000); // Cada 2 segundos
-            	
-            	resetgameChallenges();
             	
 setInterval(() => {
     playTime++;
