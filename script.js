@@ -43,9 +43,9 @@
             const gameChallenges = [
     {
         id: 1,
-        description: "Recolecta 25 monedas o más",
+        description: "Recolecta 10 monedas o más",
         type: "collect_coins", // Tipo de reto
-        target: 25, // Objetivo del reto
+        target: 10, // Objetivo del reto
         progress: 0, // Progreso actual
         completed: false // Si el reto está completado
     },
