@@ -3,6 +3,10 @@
             const gameCanvas = document.getElementById("gameCanvas");
             const ctxBackground = backgroundCanvas.getContext("2d");
             const ctx = gameCanvas.getContext("2d");
+            // Banner
+            const bannerContainer = document.getElementById('banner');
+            // ScoreBoard
+            const scoreBoard = document.getElementById('scoreboard');
 
             // Lista de imágenes para los enemigos
             const enemyImages = [
@@ -43,7 +47,7 @@
             const gameChallenges = [
     {
         id: 1,
-        description: "Recolecta 25 monedas o más",
+        description: "Collect 25 coins or more",
         type: "collect_coins", // Tipo de reto
         target: 25, // Objetivo del reto
         progress: 0, // Progreso actual
@@ -51,7 +55,7 @@
     },
     {
         id: 2,
-        description: "Recorre una distancia de 5000 o más",
+        description: "Travel a distance of 5000 or more",
         type: "distance", // Tipo de reto
         target: 5000, // Objetivo del reto
         progress: 0, // Progreso actual
@@ -59,15 +63,15 @@
     },
     {
         id: 3,
-        description: "Juega durante 2 minutos seguidos",
+        description: "Play for 5 minutes straight",
         type: "play_time", // Tipo de reto
-        target: 120, // Objetivo del reto en segundos
+        target: 300, // Objetivo del reto en segundos
         progress: 0, // Progreso actual
         completed: false // Si el reto está completado
     },
     {
         id: 4,
-        description: "Esquiva 50 enemigos",
+        description: "Dodge 50 enemies",
         type: "enemies_defeated", // Tipo de reto
         target: 50, // Objetivo del reto en segundos
         progress: 0, // Progreso actual
@@ -407,6 +411,11 @@
             		if (coins.length === 0 && enemies.length === 0) {
             			clearInterval(checkClearCanvas);
 
+                        // Ocultamos scoreboard
+                        /*scoreBoard.style.display = 'none';
+                        // Mostramos banner publi
+                        bannerContainer.style.display = 'flex';*/
+                        
             			// Aumentar la velocidad del fondo durante la transición
             			backgroundSpeed = backgroundSpeedFast;
 
@@ -417,11 +426,16 @@
             				// Restablecer la velocidad normal del fondo
             				backgroundSpeed = backgroundSpeedNormal;
 
+                         // Ocultamos banner publi
+                         /*bannerContainer.style.display = 'none';
+                         // Ocultamos scoreboard
+                        scoreBoard.style.display = 'flex';*/
+                        
             				// Reanudar la generación de monedas y enemigos
             				resumeGame();
 
             				isTransitioning = false; // Finalizar la transición
-            			}, 2000); // Duración de la transición
+            			}, 5000); // Duración de la transición
             		}
             	}, 100); // Comprobar cada 100ms si el canvas está vacío
             }
