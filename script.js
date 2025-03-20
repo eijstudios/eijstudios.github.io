@@ -347,7 +347,7 @@
             // Fin del juego
             function gameOver() {
             	isGameOver = true; // Cambiar el estado del juego a "terminado"
-            	alert(`¡Game Over! Tu puntuación total es: ${totalScore}`); // Mostrar mensaje de fin del juego
+            	alert(`¡Game Over! Total Score: ${totalScore}`); // Mostrar mensaje de fin del juego
             	document.location.reload(); // Recargar la página para reiniciar el juego
             }
 
