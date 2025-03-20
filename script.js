@@ -516,7 +516,7 @@ setInterval(() => {
 
             			if (challenge.progress >= challenge.target) {
             				challenge.completed = true;
-            				showMessage(`¡Reto completado! ${challenge.description}`);
+            				showMessage(`Challenge complete! ${challenge.description}`);
 
             				// Guardar el estado actualizado en localStorage
             				/*localStorage.setItem("gameChallenges", JSON.stringify(gameChallenges));*/
