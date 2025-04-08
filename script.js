@@ -435,7 +435,7 @@
             				resumeGame();
 
             				isTransitioning = false; // Finalizar la transición
-            			}, 5000); // Duración de la transición
+            			}, 2000); // Duración de la transición
             		}
             	}, 100); // Comprobar cada 100ms si el canvas está vacío
             }
