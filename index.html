@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Bienvenida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cachau to the moon</h1>
+    <p>Choose an option to continue:</p>
+    <button id="playButton">Play</button>
+    <button id="donateButton">Donation</button>
+    <div id="message"></div>
+
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    <script>
+        // Inicializar el SDK de Pi Network
+        if (typeof Pi !== "undefined") {
+            Pi.init({
+                version: "2.0",
+                sandbox: true // Cambiar a false en producción
+            });
+        }else {
+            console.error("El SDK de Pi Network no está disponible.");
+        }
+
+        const donateButton = document.getElementById("donateButton");
+        const playButton = document.getElementById("playButton");
+        const messageElement = document.getElementById("message");
+
+        // Verificar si el usuario ya realizó la compra
+        const hasPurchased = localStorage.getItem("hasPurchased");
+
+        // Mostrar el botón de compra solo si no se ha comprado
+        if (!hasPurchased) {
+           donateButton.style.display = "block";
+        }
+
+        // Función para manejar la donación
+        async function handleDonation() {
+            try {
+                const payment = await Pi.createPayment({
+                    amount: 0.20, // Cantidad de Pi a donar
+                    memo: "Voluntary donation", // Descripción de la donación
+                    metadata: { purpose: "donation" , productid: "1234567890"}, // Información adicional
+                });
+
+                // Si el pago se completa con éxito
+                if (payment) {
+                    messageElement.textContent = "Thank you for donating 0.20π!";
+                    donateButton.style.display = "none"; // Ocultar el botón
+                    localStorage.setItem("hasPurchased", true); // Guardar el estado de la compra
+                }
+            } catch (error) {
+                console.error("Error processing donation:", error);
+                messageElement.textContent = "Donation error. Try again later.";
+            }
+        }
+
+        // Función para iniciar el juego
+        function startGame() {
+            window.location.href = "juego.html"; // Cambia "juego.html" por la URL de tu juego
+        }
+
+        // Eventos para los botones
+        donateButton.addEventListener("click", handleDonation);
+        playButton.addEventListener("click", startGame);
+    </script>
+</body>
+</html>
