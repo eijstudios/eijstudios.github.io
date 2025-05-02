@@ -1,1 +1,552 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('8 l=n.r("l");8 h=n.r("h");8 Q=l.2r("2d");8 f=h.2r("2d");8 3q=n.r(\'3p\');8 3o=n.r(\'3n\');8 1A=["3m.u","2l.u","3l.u","3k.u"];l.9=h.9=2q.3j;l.c=h.c=2q.3i;e 1e=q;e 12=0;e F=0;e 11=0;e 1h=0;e Z=0;e s=q;8 1f=P O();1f.N="3h.u";e R=0;e 18=1;e S=0;e 13=3;e E=U;e M=1;e 1d=1;e 16=q;e 17=1;e 1M=25;8 1i=[{1g:1,T:"3g 25 t 2p 2o",D:"2c",V:25,C:0,B:q},{1g:2,T:"3f a 1s 1a 2n 2p 2o",D:"1s",V:2n,C:0,B:q},{1g:3,T:"3e z 5 3d 3c",D:"1H",V:3b,C:0,B:q},{1g:4,T:"3a A v",D:"2g",V:A,C:0,B:q}];8 1x=P O();1x.N="39.u";8 2m=P O();2m.N="2l.u";8 1y=P O();1y.N="38.u";8 1o=P O();1o.N="37.u";d 27(){Q.2k=`S-36(${S}35)`;S+=0.1v;b(S>=34)S=0;Q.1u(0,0,l.9,l.c);Q.I(1f,R,0,l.9,l.c);Q.I(1f,R+l.9,0,l.9,l.c);R-=18;b(R<=-l.9){R=0}Q.2k="33"}8 v=[];d 1K(){8 2j=(w.L()*(h.c-2e))+A;8 2h=1A[w.32(w.L()*1A.H)];v.1q({x:h.9,y:2j,9:2i,c:2i,2f:2h})}d 23(){z(e i=0;i<v.H;i++){8 k=v[i];k.x-=2;b(g.x<k.x+k.9&&g.x+g.9>k.x&&g.y<k.y+k.c&&g.y+g.c>k.y){1e=U;1R(g.x,g.y);1j(()=>{b(!s){1r()}},1B);1n}b(k.x+k.9<0){v.1b(i,1);i--;W("2g")}}}d 22(){z(8 k 1a v){8 1z=P O();1z.N=k.2f;f.I(1z,k.x,k.y,k.9,k.c)}}8 t=[];d 1L(){t.1q({x:h.9,y:(w.L()*(h.c-2e))+A,9:25,c:25})}d 21(){z(e i=0;i<t.H;i++){8 j=t[i];j.x-=2;b(g.x<j.x+j.9&&g.x+g.9>j.x&&g.y<j.y+j.c&&g.y+g.c>j.y){F++;1X(j.x+j.9/2,j.y+j.c/2);t.1b(i,1);i--;1c();W("2c");b(F%10==0&&F>0){1O()}}b(j.x+j.9<0){t.1b(i,1);i--}}}d 1Z(){z(8 j 1a t){f.I(1y,j.x,j.y,j.9,j.c)}}8 g={x:h.9/6,y:h.c/2,9:A,c:A,K:0,2a:-7,2b:0.5,24(){b(!1e){f.I(1x,o.x,o.y,o.9,o.c)}},26(){b(!1e){o.K+=o.2b;o.y+=o.K;b(o.y+o.c>h.c||o.y<0){b(!s){1r()}}}}};h.31("30",()=>{b(!s&&!E){g.K=g.2a;12++;1c()}});d 28(){f.1u(0,0,h.9,h.c);f.2Z="2Y 2X";f.1T=`2W(1w,1w,1w,${1d})`;f.2V="2U";8 15=13>0?13:"2T!";f.2S();f.2R(h.9/2,h.c/2);f.2Q(M,M);f.2P(15,0,0);f.2O()}d 1P(){8 29=Y(()=>{M-=0.1v;1d-=0.1v;b(M<=0){13--;M=1;1d=1;b(13<0){19(29);E=q;1F();1m();1t()}}28()},A)}d 1t(){b(s)1n;b(!E){f.1u(0,0,h.9,h.c);27();g.26();g.24();23();22();21();1Z();1W();1U();1Y()}2N(1t)}d 1c(){n.r("12").X=12;n.r("F").X=F;n.r("11").X=11;Z=12+F*10+11+1h;n.r("Z").X=Z}d 1Y(){b(!s&&!E){11++;1c();W("1s")}}d 1r(){s=U;2M(`¡2L 2K!2J 2I:${Z}`);n.2H.2G()}8 J=[];d 1X(x,y){z(e i=0;i<10;i++){J.1q({x:x,y:y,1V:(w.L()-0.5)*2,K:(w.L()-0.5)*2,1S:w.L()*5+2,1p:A})}}d 1W(){z(e i=0;i<J.H;i++){8 p=J[i];p.x+=p.1V;p.y+=p.K;p.1p--;b(p.1p<=0){J.1b(i,1);i--}}}d 1U(){z(8 p 1a J){f.1T="2F";f.2E();f.2D(p.x,p.y,p.1S,0,w.2C*2);f.2B()}}d 1R(x,y){f.I(1o,x-20,y-20,1Q,1Q)}1P();d 1O(){b(16)1n;16=U;19(1l);19(1k);8 1N=Y(()=>{b(t.H===0&&v.H===0){19(1N);18=1M;1j(()=>{17>=10?10:17+=2;18=17;1m();16=q},1J)}},2A)}e 1l,1k,1I=0;d 1m(){1l=Y(()=>{b(!s&&!E){1L()}},1G);1k=Y(()=>{b(!s&&!E){1K()}},1J);Y(()=>{1I++;W("1H",1)},2z)}d 1C(15){8 14=n.r("14");8 G=n.2y("2x");G.2w="G";G.X=15;14.2v(G);1j(()=>{14.2u(G)},1G)}d 1F(){1i.1E(m=>{m.C=0;m.B=q})}d W(D,1D=1){1i.1E(m=>{b(m.D===D&&!m.B){m.C+=1D;b(m.C>=m.V){m.B=U;1C(`2t 2s!${m.T}`);1h+=1B}}})}',62,213,'||||||||const|width||if|height|function|let|ctx|dogRocket|gameCanvas||coin|enemy|backgroundCanvas|challenge|document|this||false|getElementById|isGameOver|coins|png|enemies|Math|||for|50|completed|progress|type|isCountdownActive|coinScore|message|length|drawImage|particles|dy|random|countdownScale|src|Image|new|ctxBackground|backgroundX|hue|description|true|target|updateChallenges|textContent|setInterval|totalScore||distanceScore|tapScore|countdown|messageContainer|text|isTransitioning|backgroundSpeedNormal|backgroundSpeed|clearInterval|of|splice|updateScoreboard|countdownOpacity|isExploding|backgroundImage|id|challengeScore|gameChallenges|setTimeout|enemyInterval|coinInterval|resumeGame|return|explosionImage|life|push|gameOver|distance|gameLoop|clearRect|05|255|dogImage|coinImage|img|enemyImages|500|showMessage|amount|forEach|resetgameChallenges|3000|play_time|playTime|2000|createEnemy|createCoin|backgroundSpeedFast|checkClearCanvas|startTransition|animateCountdown|80|createExplosion|size|fillStyle|drawParticles|dx|updateParticles|createParticles|updateDistance|drawCoins||updateCoins|drawEnemies|updateEnemies|draw||update|drawBackground|drawCountdown|animationInterval|jump|gravity|collect_coins||150|image|enemies_defeated|randomGraphic|60|enemyY|filter|enemigo2|enemyImage|5000|more|or|window|getContext|complete|Challenge|removeChild|appendChild|className|div|createElement|1000|100|fill|PI|arc|beginPath|gold|reload|location|Score|Total|Over|Game|alert|requestAnimationFrame|restore|fillText|scale|translate|save|TAP|center|textAlign|rgba|Arial|90px|font|click|addEventListener|floor|none|360|deg|rotate|explosion|DogizenCoin|DogizenRocket|Dodge|300|straight|minutes|Play|Travel|Collect|background|innerHeight|innerWidth|enemigo4|enemigo3|enemigo1|scoreboard|scoreBoard|banner|bannerContainer'.split('|'),0,{}))
+// Configuración de los canvas
+const backgroundCanvas = document.getElementById("backgroundCanvas");
+const gameCanvas = document.getElementById("gameCanvas");
+const ctxBackground = backgroundCanvas.getContext("2d");
+const ctx = gameCanvas.getContext("2d");
+// Banner
+const bannerContainer = document.getElementById('banner');
+// ScoreBoard
+const scoreBoard = document.getElementById('scoreboard');
+
+// Lista de imágenes para los enemigos
+const enemyImages = [
+	"enemigo1.png", // Ruta de la imagen 1
+	"enemigo2.png", // Ruta de la imagen 2
+	"enemigo3.png", // Ruta de la imagen 3
+	"enemigo4.png" // Ruta de la imagen 4
+];
+backgroundCanvas.width = gameCanvas.width = window.innerWidth;
+backgroundCanvas.height = gameCanvas.height = window.innerHeight;
+let isExploding = false; // Indica si el personaje está en estado de explosión
+
+// Variables del juego
+let tapScore = 0;
+let coinScore = 0;
+let distanceScore = 0;
+let challengeScore = 0;
+let totalScore = 0;
+let isGameOver = false;
+
+// Variables para el fondo
+var backgroundImage = new Image();
+let backgroundX = 0;
+let backgroundSpeed = 1;
+let hue = 0;
+
+// Variables para la cuenta atrás
+let countdown = 3;
+let isCountdownActive = true;
+let countdownScale = 1;
+let countdownOpacity = 1;
+
+let isTransitioning = false; // Indica si estamos en la transición de nivel
+let backgroundSpeedNormal = 1; // Velocidad normal del fondo
+let backgroundSpeedFast = 25; // Velocidad rápida del fondo durante la transición
+
+const gameChallenges = [{
+		id: 1,
+		description: "Collect 25 coins or more",
+		type: "collect_coins", // Tipo de reto
+		target: 25, // Objetivo del reto
+		progress: 0, // Progreso actual
+		completed: false // Si el reto está completado
+	},
+	{
+		id: 2,
+		description: "Travel a distance of 5000 or more",
+		type: "distance", // Tipo de reto
+		target: 5000, // Objetivo del reto
+		progress: 0, // Progreso actual
+		completed: false // Si el reto está completado
+	},
+	{
+		id: 3,
+		description: "Play for 5 minutes straight",
+		type: "play_time", // Tipo de reto
+		target: 300, // Objetivo del reto en segundos
+		progress: 0, // Progreso actual
+		completed: false // Si el reto está completado
+	},
+	{
+		id: 4,
+		description: "Dodge 50 enemies",
+		type: "enemies_defeated", // Tipo de reto
+		target: 50, // Objetivo del reto en segundos
+		progress: 0, // Progreso actual
+		completed: false // Si el reto está completado
+	}
+];
+
+//Constante para guardar las rutas de las imagenesimagePaths
+const imagePaths = [
+    "background.png",
+    "DogizenRocket.png",
+    "DogizenCoin.png",
+    "explosion.png",
+    "enemigo1.png",
+    "enemigo2.png",
+    "enemigo3.png",
+    "enemigo4.png"
+];
+
+// Cargar imágenes del juego
+var dogImage = new Image();
+var coinImage = new Image();
+var explosionImage = new Image();
+var preloadedEnemyImages = {}; // Objeto para almacenar las imágenes de los enemigos pre-cargadas
+
+// Dibujar el fondo desplazándose infinitamente
+function drawBackground() {
+	ctxBackground.filter = `hue-rotate(${hue}deg)`; // Cambiar el tono del fondo
+	hue += 0.05; //0.1
+	if (hue >= 360) hue = 0;
+
+	ctxBackground.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height);
+
+	ctxBackground.drawImage(backgroundImage, backgroundX, 0, backgroundCanvas.width, backgroundCanvas.height);
+	ctxBackground.drawImage(backgroundImage, backgroundX + backgroundCanvas.width, 0, backgroundCanvas.width, backgroundCanvas.height);
+
+	backgroundX -= backgroundSpeed;
+	if (backgroundX <= -backgroundCanvas.width) {
+		backgroundX = 0; // Reiniciar la posición del fondo
+	}
+
+	ctxBackground.filter = "none"; // Restablecer el filtro
+}
+
+const enemies = [];
+
+function createEnemy() {
+	const enemyY = (Math.random() * (gameCanvas.height - 150)) + 50; // Posición aleatoria
+	// Seleccionar un gráfico aleatorio para el enemigo
+	const randomGraphic = Math.floor(Math.random() * enemyImages.length);
+	var img = new Image();
+	
+	switch(randomGraphic){
+		case 0:
+			img = preloadedEnemyImages["enemigo1.png"];
+			break;
+		case 1:
+			img = preloadedEnemyImages["enemigo2.png"];
+			break;
+		case 2:
+			img = preloadedEnemyImages["enemigo3.png"];
+			break;
+		case 3:
+			img = preloadedEnemyImages["enemigo4.png"];
+			break;
+	}
+	enemies.push({
+		x: gameCanvas.width,
+		y: enemyY,
+		width: 60,
+		height: 60,
+		image: img // Usar la imagen pre-cargada al enemigo
+	});
+}
+
+function updateEnemies() {
+	for (let i = 0; i < enemies.length; i++) {
+		const enemy = enemies[i];
+		enemy.x -= 2; // Mover hacia la izquierda
+
+		// Detectar colisión con el jugador
+		if (
+			dogRocket.x < enemy.x + enemy.width &&
+			dogRocket.x + dogRocket.width > enemy.x &&
+			dogRocket.y < enemy.y + enemy.height &&
+			dogRocket.y + dogRocket.height > enemy.y
+		) {
+			// Activar el estado de explosión
+			isExploding = true;
+			createExplosion(dogRocket.x, dogRocket.y); // Crear explosión
+			// Detener el juego después de un breve retraso para mostrar la explosión
+			setTimeout(() => {
+				if (!isGameOver) {
+					gameOver();
+				}
+			}, 500); // Esperar 500ms para que la explosión sea visible
+			return; // Salir de la función para evitar más actualizaciones
+		}
+
+		// Eliminar enemigos fuera del canvas
+		if (enemy.x + enemy.width < 0) {
+			enemies.splice(i, 1);
+			i--;
+			// Actualizamos el reto
+			updateChallenges("enemies_defeated");
+		}
+	}
+}
+
+function drawEnemies() {
+	for (const enemy of enemies) {
+		ctx.drawImage(enemy.image, enemy.x, enemy.y, enemy.width, enemy.height);
+	}
+}
+
+const coins = [];
+
+function createCoin() {
+	coins.push({
+		x: gameCanvas.width,
+		y: (Math.random() * (gameCanvas.height - 150)) + 50,
+		width: 25,
+		height: 25
+	});
+}
+
+function updateCoins() {
+	for (let i = 0; i < coins.length; i++) {
+		const coin = coins[i];
+		coin.x -= 2; // Mover la moneda hacia la izquierda
+
+		// Detectar colisión con el jugador
+		if (
+			dogRocket.x < coin.x + coin.width &&
+			dogRocket.x + dogRocket.width > coin.x &&
+			dogRocket.y < coin.y + coin.height &&
+			dogRocket.y + dogRocket.height > coin.y
+		) {
+			coinScore++; // Incrementar la puntuación de monedas
+			createParticles(coin.x + coin.width / 2, coin.y + coin.height / 2); // Crear partículas en la posición de la moneda
+			coins.splice(i, 1);
+			i--;
+			updateScoreboard();
+			updateChallenges("collect_coins");
+
+			// Iniciar transición al recoger 10 monedas
+			if (coinScore % 10 == 0 && coinScore > 0) {
+				startTransition();
+			}
+		}
+
+		// Eliminar monedas fuera del canvas
+		if (coin.x + coin.width < 0) {
+			coins.splice(i, 1);
+			i--;
+		}
+	}
+}
+
+function drawCoins() {
+	for (const coin of coins) {
+		ctx.drawImage(coinImage, coin.x, coin.y, coin.width, coin.height);
+	}
+}
+
+const dogRocket = {
+	x: gameCanvas.width / 6,
+	y: gameCanvas.height / 2,
+	width: 50,
+	height: 50,
+	dy: 0,
+	jump: -7,
+	gravity: 0.5,
+	draw() {
+		if (!isExploding) {
+			ctx.drawImage(dogImage, this.x, this.y, this.width, this.height);
+		}
+	},
+	update() {
+		if (!isExploding) {
+			this.dy += this.gravity; // Aplicar gravedad
+			this.y += this.dy; // Actualizar la posición vertical
+
+			// Evitar que salga del canvas
+			if (this.y + this.height > gameCanvas.height || this.y < 0) {
+				if (!isGameOver) {
+					gameOver();
+				}
+			}
+		}
+	}
+};
+
+// Manejar el salto
+gameCanvas.addEventListener("click", () => {
+	if (!isGameOver && !isCountdownActive) {
+		dogRocket.dy = dogRocket.jump;
+		tapScore++;
+		updateScoreboard();
+	}
+});
+
+// Dibujar la cuenta atrás con animaciones
+function drawCountdown() {
+	ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height); // Limpiar el canvas principal
+
+	ctx.font = "90px Arial";
+	ctx.fillStyle = `rgba(255, 255, 255, ${countdownOpacity})`; // Aplicar opacidad al texto
+	ctx.textAlign = "center";
+
+	const text = countdown > 0 ? countdown : "TAP!"; // Mostrar el número o "TAP!"
+	ctx.save(); // Guardar el estado del contexto
+	ctx.translate(gameCanvas.width / 2, gameCanvas.height / 2); // Mover el origen al centro del canvas
+	ctx.scale(countdownScale, countdownScale); // Aplicar la escala
+	ctx.fillText(text, 0, 0); // Dibujar el texto en el centro
+	ctx.restore(); // Restaurar el estado del contexto
+}
+
+// Animar la cuenta atrás
+function animateCountdown() {
+	// Precargamos las imagenes del juego
+	preloadImages(imagePaths, (images) => {
+        console.log("Todas las imágenes han sido pre-cargadas.");
+        backgroundImage = images["background.png"]; // Imagen del fondo
+        dogImage = images["DogizenRocket.png"];
+        coinImage = images["DogizenCoin.png"];
+        explosionImage = images["explosion.png"]; // Imagen de la explosión
+		
+        // Asignar las imágenes pre-cargadas de los enemigos
+        enemyImages.forEach((path) => {
+            preloadedEnemyImages[path] = images[path];
+        });
+    });
+	
+	const animationInterval = setInterval(() => {
+		countdownScale -= 0.05; // Reducir la escala del texto
+		countdownOpacity -= 0.05; // Reducir la opacidad del texto
+
+		// Si la escala y la opacidad llegan a 0, pasar al siguiente número
+		if (countdownScale <= 0) {
+			countdown--; // Reducir el número de la cuenta atrás
+			countdownScale = 1; // Reiniciar la escala
+			countdownOpacity = 1; // Reiniciar la opacidad
+
+			// Si la cuenta atrás termina, iniciar el juego
+			if (countdown < 0) {
+				clearInterval(animationInterval); // Detener la animación
+				isCountdownActive = false; // Desactivar la cuenta atrás
+				resetgameChallenges(); //Reiniciamos los retos
+				2
+				resumeGame(); // Iniciar la generación de monedas y enemigos
+				gameLoop(); // Iniciar el juego
+			}
+		}
+
+		drawCountdown(); // Dibujar el número actual con la animación
+	}, 50); // Actualizar la animación cada 50ms
+}
+
+// Bucle principal del juego
+function gameLoop() {
+	if (isGameOver) return; // Detener el bucle si el juego ha terminado
+
+	if (!isCountdownActive) {
+		ctx.clearRect(0, 0, gameCanvas.width, gameCanvas.height); // Limpiar el canvas principal
+
+		drawBackground(); // Dibujar el fondo dinámico
+
+		dogRocket.update(); // Actualizar el personaje
+		dogRocket.draw(); // Dibujar el personaje
+
+		updateEnemies(); // Actualizar los enemigos
+		drawEnemies(); // Dibujar los enemigos
+
+		updateCoins(); // Actualizar las monedas
+		drawCoins(); // Dibujar las monedas
+
+		updateParticles(); // Actualizar las partículas
+		drawParticles(); // Dibujar las partículas
+
+		updateDistance(); // Actualizar la distancia recorrida
+	}
+
+	requestAnimationFrame(gameLoop); // Continuar el bucle
+}
+
+// Actualizar el marcador (UI)
+function updateScoreboard() {
+	document.getElementById("tapScore").textContent = tapScore; // Actualizar los toques
+	document.getElementById("coinScore").textContent = coinScore; // Actualizar las monedas
+	document.getElementById("distanceScore").textContent = distanceScore; // Actualizar la distancia
+	totalScore = tapScore + coinScore * 10 + distanceScore + challengeScore; // Calcular la puntuación total
+	document.getElementById("totalScore").textContent = totalScore; // Actualizar la puntuación total
+}
+
+// Actualizar la distancia recorrida
+function updateDistance() {
+	if (!isGameOver && !isCountdownActive) {
+		distanceScore++; // Incrementar la distancia recorrida
+		updateScoreboard(); // Actualizar el marcador
+		updateChallenges("distance");
+	}
+}
+
+// Fin del juego
+function gameOver() {
+	isGameOver = true; // Cambiar el estado del juego a "terminado"
+	alert(`¡Game Over! Total Score: ${totalScore}`); // Mostrar mensaje de fin del juego
+	document.location.reload(); // Recargar la página para reiniciar el juego
+}
+
+const particles = [];
+
+function createParticles(x, y) {
+	for (let i = 0; i < 10; i++) {
+		particles.push({
+			x: x,
+			y: y,
+			dx: (Math.random() - 0.5) * 2,
+			dy: (Math.random() - 0.5) * 2,
+			size: Math.random() * 5 + 2,
+			life: 50
+		});
+	}
+}
+
+function updateParticles() {
+	for (let i = 0; i < particles.length; i++) {
+		const p = particles[i];
+		p.x += p.dx;
+		p.y += p.dy;
+		p.life--;
+
+		// Eliminar partículas cuando su vida llega a 0
+		if (p.life <= 0) {
+			particles.splice(i, 1);
+			i--;
+		}
+	}
+}
+
+function drawParticles() {
+	for (const p of particles) {
+		ctx.fillStyle = "gold";
+		ctx.beginPath();
+		ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+		ctx.fill();
+	}
+}
+
+// Explosión al chocar con un enemigo
+function createExplosion(x, y) {
+	ctx.drawImage(explosionImage, x - 20, y - 20, 80, 80);
+}
+
+function startTransition() {
+	if (isTransitioning) return; // Evitar múltiples transiciones al mismo tiempo
+	isTransitioning = true;
+
+	// Detener la generación de monedas y enemigos
+	clearInterval(coinInterval); // Detener creación de monedas
+	clearInterval(enemyInterval); // Detener creación de enemigos
+
+	// Esperar a que no haya monedas ni enemigos en el canvas
+	const checkClearCanvas = setInterval(() => {
+		if (coins.length === 0 && enemies.length === 0) {
+			clearInterval(checkClearCanvas);
+
+			// Aumentar la velocidad del fondo durante la transición
+			backgroundSpeed = backgroundSpeedFast;
+
+			// Mantener la velocidad rápida por 2 segundos
+			setTimeout(() => {
+				// Aumentamos la velocidad del juego
+				backgroundSpeedNormal >= 10 ? 10 : backgroundSpeedNormal += 2;
+				// Restablecer la velocidad normal del fondo
+				backgroundSpeed = backgroundSpeedNormal;
+
+				// Reanudar la generación de monedas y enemigos
+				resumeGame();
+
+				isTransitioning = false; // Finalizar la transición
+			}, 2000); // Duración de la transición
+		}
+	}, 100); // Comprobar cada 100ms si el canvas está vacío
+}
+
+let coinInterval, enemyInterval, playTime = 0;
+
+function resumeGame() {
+	// Reanudar la creación de monedas
+	coinInterval = setInterval(() => {
+		if (!isGameOver && !isCountdownActive) {
+			createCoin();
+		}
+	}, 3000); // Cada 3 segundos
+
+	// Reanudar la creación de enemigos
+	enemyInterval = setInterval(() => {
+		if (!isGameOver && !isCountdownActive) {
+			createEnemy();
+		}
+	}, 2000); // Cada 2 segundos
+
+	setInterval(() => {
+		playTime++;
+		updateChallenges("play_time", 1); // Incrementar el progreso del reto de tiempo
+	}, 1000);
+}
+
+function showMessage(text) {
+	const messageContainer = document.getElementById("messageContainer");
+	const message = document.createElement("div");
+	message.className = "message";
+	message.textContent = text;
+
+	messageContainer.appendChild(message);
+
+	// Eliminar el mensaje después de que termine la animación
+	setTimeout(() => {
+		messageContainer.removeChild(message);
+	}, 3000); // 3 segundos (duración de la animación)
+}
+
+function resetgameChallenges() {
+	// Reiniciar el progreso de los retos
+	gameChallenges.forEach(challenge => {
+		challenge.progress = 0;
+		challenge.completed = false;
+	});
+}
+
+// Funcion para actualizar el Progreso de los Retos
+function updateChallenges(type, amount = 1) {
+	gameChallenges.forEach(challenge => {
+		if (challenge.type === type && !challenge.completed) {
+			challenge.progress += amount;
+
+			if (challenge.progress >= challenge.target) {
+				challenge.completed = true;
+				showMessage(`Challenge complete! ${challenge.description}`);
+				challengeScore += 500;
+			}
+		}
+	});
+}
+
+// Función para pre-cargar imágenes
+function preloadImages(imagePaths, callback) {
+    const images = {}; // Objeto para almacenar las imágenes cargadas
+    let loadedImages = 0; // Contador de imágenes cargadas
+
+    imagePaths.forEach((path) => {
+        const img = new Image(); // Crear un nuevo objeto Image
+        img.src = path; // Asignar la ruta de la imagen
+
+        img.onload = () => {
+            images[path] = img; // Guardar la imagen en el objeto con su ruta como clave
+            loadedImages++;
+
+            // Si todas las imágenes están cargadas, ejecutar el callback
+            if (loadedImages === imagePaths.length) {
+                callback(images); // Pasar las imágenes cargadas al callback
+            }
+        };
+
+        img.onerror = () => {
+            console.error(`Error al cargar la imagen: ${path}`);
+            loadedImages++;
+
+            // Si todas las imágenes están cargadas, ejecutar el callback
+            if (loadedImages === imagePaths.length) {
+                callback(images);
+            }
+        };
+    });
+}
+
+// Iniciar el juego con la cuenta atrás animada
+animateCountdown();
