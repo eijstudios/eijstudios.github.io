@@ -66,7 +66,7 @@
             });
 			
 			Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
-			  console.log(`Listo para realizar donaciones!`);
+			  console.log("Listo para realizar donaciones!");
 			}).catch(function(error) {
 			  console.error(error);
 			});
@@ -95,49 +95,29 @@
 			try {
 				const payment = await Pi.createPayment({
 					amount: 0.20, // Cantidad de Pi a donar
-					memo: "Voluntary donation",
-					metadata: { purpose: "donation" },
-					onReadyForServerApproval: async (paymentId) => {
-						// Enviar el paymentId al backend para su aprobación
-						const response = await fetch("https://tu-backend.com/approve-payment", {
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json"
-							},
-							body: JSON.stringify({ paymentId })
-						});
-
-						if (!response.ok) {
-							throw new Error("Error al aprobar el pago en el servidor.");
-						}
+					memo: "Donación voluntaria", // Descripción del pago
+					metadata: { purpose: "donation" }, // Información adicional
+					onReadyForServerApproval: (paymentId) => {
+						console.log("Pago listo para aprobación en el servidor (sandbox):", paymentId);
+						// En modo sandbox, no necesitas enviar el paymentId a un backend
 					},
-					onReadyForServerCompletion: async (paymentId) => {
-						// Completar el pago en el backend
-						const response = await fetch("https://tu-backend.com/complete-payment", {
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json"
-							},
-							body: JSON.stringify({ paymentId })
-						});
-
-						if (!response.ok) {
-							throw new Error("Error al completar el pago en el servidor.");
-						}
+					onReadyForServerCompletion: (paymentId) => {
+						console.log("Pago listo para completarse en el servidor (sandbox):", paymentId);
+						// En modo sandbox, no necesitas completar el pago en un backend
 					},
-					onError: function(error, payment) { 
-						console.error("Error en payment:", error);
+					onCancel: (paymentId) => {
+						console.log("El usuario canceló el pago:", paymentId);
+					},
+					onError: (error, payment) => {
+						console.error("Error durante el proceso de pago:", error);
 					}
 				});
 
 				if (payment) {
-					messageElement.textContent = "Thank you for donating 0.20π!";
-                    donateButton.style.display = "none"; // Ocultar el botón
-                    localStorage.setItem("hasPurchased", true); // Guardar el estado de la compra
+					console.log("¡Donación completada con éxito (sandbox)!");
 				}
 			} catch (error) {
 				console.error("Error procesando donación:", error);
-                messageElement.textContent = "Donation error. Try again later.";
 			}
 		}
 
