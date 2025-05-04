@@ -60,10 +60,7 @@
 		const scopes = ['payments'];
         // Inicializar el SDK de Pi Network
         if (typeof Pi !== "undefined") {
-            Pi.init({
-                version: "2.0",
-                sandbox: true // Cambiar a false en producción
-            });
+            Pi.init({ version: "2.0", sandbox: true });
 			
 			Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
 			  console.log("Listo para realizar donaciones!");
@@ -93,15 +90,19 @@
 		// Crear un pago en el frontend
 		async function handleDonation() {
 			try {
-				const payment = await Pi.createPayment({
-					amount: 0.20, // Cantidad de Pi a donar
-					memo: "Donación voluntaria", // Descripción del pago
-					metadata: { purpose: "donation" }, // Información adicional
+				const paymentData = {
+					amount: 0.20,
+					memo: "Voluntary Donation",
+					metadata: { purpose: "donation" } // Información adicional
+				};
+				
+				//the SDK activates these functions itself
+			   const paymentCallbacks = {
 					onReadyForServerApproval: (paymentId) => {
 						console.log("Pago listo para aprobación en el servidor (sandbox):", paymentId);
 						// En modo sandbox, no necesitas enviar el paymentId a un backend
 					},
-					onReadyForServerCompletion: (paymentId) => {
+					onReadyForServerCompletion: (paymentId, txid) => {
 						console.log("Pago listo para completarse en el servidor (sandbox):", paymentId);
 						// En modo sandbox, no necesitas completar el pago en un backend
 					},
@@ -110,8 +111,10 @@
 					},
 					onError: (error, payment) => {
 						console.error("Error durante el proceso de pago:", error);
-					}
-				});
+					},
+				};
+				
+				const payment = Pi.createPayment(paymentData, paymentCallbacks);
 
 				if (payment) {
 					console.log("¡Donación completada con éxito (sandbox)!");
