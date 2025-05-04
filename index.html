@@ -50,19 +50,26 @@
     <h1>Cachau to the moon</h1>
     <p>Choose an option to continue:</p>
     <button id="playButton">Play</button>
-    <button id="donateButton">Donation</button>
+    <button id="donateButton">Donation (0.20π)</button>
     <div id="message"></div>
     <script type=»text/javascript»>
         document.oncontextmenu = function(){return false;}
     </script>
     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
     <script>
+		const scopes = ['payments'];
         // Inicializar el SDK de Pi Network
         if (typeof Pi !== "undefined") {
             Pi.init({
                 version: "2.0",
                 sandbox: true // Cambiar a false en producción
             });
+			
+			Pi.authenticate(scopes, onIncompletePaymentFound).then(function(auth) {
+			  console.log(`Listo para realizar donaciones!`);
+			}).catch(function(error) {
+			  console.error(error);
+			});
         }else {
             console.error("El SDK de Pi Network no está disponible.");
         }
@@ -78,27 +85,61 @@
         if (!hasPurchased) {
            donateButton.style.display = "block";
         }
+		
+		function onIncompletePaymentFound(payment) { 
+			console.error("Incomplete Payment Found:", payment);
+		};
+		
+		// Crear un pago en el frontend
+		async function handleDonation() {
+			try {
+				const payment = await Pi.createPayment({
+					amount: 0.20, // Cantidad de Pi a donar
+					memo: "Voluntary donation",
+					metadata: { purpose: "donation" },
+					onReadyForServerApproval: async (paymentId) => {
+						// Enviar el paymentId al backend para su aprobación
+						const response = await fetch("https://tu-backend.com/approve-payment", {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json"
+							},
+							body: JSON.stringify({ paymentId })
+						});
 
-        // Función para manejar la donación
-        async function handleDonation() {
-            try {
-                const payment = await Pi.createPayment({
-                    amount: 0.20, // Cantidad de Pi a donar
-                    memo: "Voluntary donation", // Descripción de la donación
-                    metadata: { purpose: "donation" , productid: "1234567890"}, // Información adicional
-                });
+						if (!response.ok) {
+							throw new Error("Error al aprobar el pago en el servidor.");
+						}
+					},
+					onReadyForServerCompletion: async (paymentId) => {
+						// Completar el pago en el backend
+						const response = await fetch("https://tu-backend.com/complete-payment", {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json"
+							},
+							body: JSON.stringify({ paymentId })
+						});
 
-                // Si el pago se completa con éxito
-                if (payment) {
-                    messageElement.textContent = "Thank you for donating 0.20π!";
+						if (!response.ok) {
+							throw new Error("Error al completar el pago en el servidor.");
+						}
+					},
+					onError: function(error, payment) { 
+						console.error("Error en payment:", error);
+					}
+				});
+
+				if (payment) {
+					messageElement.textContent = "Thank you for donating 0.20π!";
                     donateButton.style.display = "none"; // Ocultar el botón
                     localStorage.setItem("hasPurchased", true); // Guardar el estado de la compra
-                }
-            } catch (error) {
-                console.error("Error processing donation:", error);
+				}
+			} catch (error) {
+				console.error("Error procesando donación:", error);
                 messageElement.textContent = "Donation error. Try again later.";
-            }
-        }
+			}
+		}
 
         // Función para iniciar el juego
         function startGame() {
